@@ -9,6 +9,7 @@
     "start": "waku start"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.97.17",
     "firebase": "^11.2.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -16,6 +17,8 @@
     "waku": "0.21.13"
   },
   "devDependencies": {
+    "@tanstack/router-devtools": "^1.97.17",
+    "@tanstack/router-plugin": "^1.97.17",
     "@types/react": "19.0.3",
     "@types/react-dom": "19.0.2",
     "autoprefixer": "10.4.20",
