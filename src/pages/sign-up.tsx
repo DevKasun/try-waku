@@ -1,24 +1,25 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
+'use client';
+
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../lib/firebase';
 
-export default function SignIn() {
+export default function SignUp() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const handleSignIn = async (e: React.FormEvent) => {
+	const handleSignUp = async (e: React.FormEvent) => {
 		e.preventDefault();
 		try {
-			await signInWithEmailAndPassword(auth, email, password);
-			alert('Signed in successfully');
+			await createUserWithEmailAndPassword(auth, email, password);
+			alert('User created successfully');
 		} catch (error) {
-			console.error(error);
-			alert('Error signing in');
+			alert('Error signing up');
 		}
 	};
 
 	return (
-		<form onSubmit={handleSignIn}>
+		<form onSubmit={handleSignUp}>
 			<input
 				type='text'
 				placeholder='Email'
@@ -28,9 +29,10 @@ export default function SignIn() {
 			<input
 				type='password'
 				placeholder='Password'
+				value={password}
 				onChange={(e) => setPassword(e.target.value)}
 			/>
-			<button type='submit'>Sign In</button>
+			<button type='submit'>Sign Up</button>
 		</form>
 	);
 }

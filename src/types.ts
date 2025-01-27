@@ -1,14 +1,12 @@
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv extends ProcessEnv { }
-  }
+type FirebaseConfig = {
+  apiKey: string,
+  authDomain: string,
+  projectId: string,
+  storageBucket: string,
+  messagingSenderId: string,
+  appId: string,
 }
 
-export interface ProcessEnv {
-  FIREBASE_API_KEY: string;
-  FIREBASE_AUTH_DOMAIN: string;
-  FIREBASE_PROJECT_ID: string;
-  FIREBASE_STORAGE_BUCKET: string;
-  FIREBASE_MESSAGING_SENDER_ID: string;
-  FIREBASE_APP_ID: string;
+export type {
+  FirebaseConfig
 }
