@@ -12,7 +12,6 @@ export function useAuth() {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setUser(user);
         });
-
         return () => unsubscribe();
     }, []);
 
