@@ -84,3 +84,9 @@ export default function SignIn() {
 		</div>
 	);
 }
+
+export const getConfig = async () => {
+  return {
+    render: 'dynamic',
+  } as const;
+};
